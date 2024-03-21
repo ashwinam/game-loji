@@ -2,6 +2,7 @@ import light_theme_logo from "./assets/removed_bg_logo_cleanup.png";
 import dark_theme_logo from "./assets/removed_bg_logo.png";
 import { ModeToggle } from "./components/mode-toggle";
 import { useTheme } from "./components/theme-provider";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
       <div className="aside bg-orange-500 hidden sm:block h-20 shadow-lg">
         aside
       </div>
-      <div className="main bg-teal-500 h-20 shadow-lg">main</div>
+      <div className="main">
+        <GameGrid />
+      </div>
     </div>
   );
 }
