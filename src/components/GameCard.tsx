@@ -7,8 +7,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import PlatformIconsList from "./PlatformIconsList";
 
-interface Props {
+export interface Props {
   game: Game;
 }
 
@@ -20,9 +21,12 @@ function GameCard({ game }: Props) {
       </CardHeader>
       <CardFooter>
         <CardTitle>
-          <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+          <div className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
             {game.name}
-          </h2>
+          </div>
+          <div className="flex gap-3 mt-2">
+            <PlatformIconsList game={game} />
+          </div>
         </CardTitle>
       </CardFooter>
     </Card>
