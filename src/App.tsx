@@ -1,15 +1,12 @@
-import { ThemeProvider } from "@/components/theme-provider";
-import { Button } from "./components/ui/button";
-import { ModeToggle } from "./components/mode-toggle";
-
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="flex justify-between">
-        <Button>Use Me</Button>
-        <ModeToggle />
+    <div className="grid m-5 sm:grid-cols-2 gap-4">
+      <div className="nav sm:col-span-2 bg-sky-500 h-20 shadow-lg">Nav</div>
+      <div className="aside bg-orange-500 hidden sm:block h-20 shadow-lg">
+        aside
       </div>
-    </ThemeProvider>
+      <div className="main bg-teal-500 h-20 shadow-lg">main</div>
+    </div>
   );
 }
 
