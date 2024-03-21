@@ -1,4 +1,5 @@
 import useGames from "@/hooks/useGames";
+import GameCard from "./GameCard";
 
 function GameGrid() {
   const { games, error } = useGames();
@@ -7,11 +8,12 @@ function GameGrid() {
     <>
       {error && <p>{error}</p>}
 
-      <ul>
-        {games.map((data) => (
-          <li key={data.id}>{data.name}</li>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-5">
+        {/*<li key={data.id}>{data.name}</li> */}
+        {games.map((game) => (
+          <GameCard key={game.id} game={game} />
         ))}
-      </ul>
+      </div>
     </>
   );
 }

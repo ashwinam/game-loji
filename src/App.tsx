@@ -6,8 +6,8 @@ import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
-    <div className="grid sm:grid-cols-2 gap-4">
-      <div className="nav sm:col-span-2 flex items-center justify-between pr-4">
+    <div className="grid sm:grid-cols-12 gap-4">
+      <div className="nav sm:col-span-12 flex items-center justify-between pr-4">
         <img
           src={
             useTheme().theme === "light" ? light_theme_logo : dark_theme_logo
@@ -17,10 +17,8 @@ function App() {
         />
         <ModeToggle />
       </div>
-      <div className="aside bg-orange-500 hidden sm:block h-20 shadow-lg">
-        aside
-      </div>
-      <div className="main">
+      <div className="aside hidden sm:block sm:col-span-2">aside</div>
+      <div className="main sm:col-span-10">
         <GameGrid />
       </div>
     </div>
