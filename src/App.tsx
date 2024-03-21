@@ -1,8 +1,15 @@
+import { ThemeProvider } from "@/components/theme-provider";
+import { Button } from "./components/ui/button";
+import { ModeToggle } from "./components/mode-toggle";
+
 function App() {
   return (
-    <h1 className="h-screen w-full text-3xl font-bold underline bg-zinc-800 text-white">
-      Hello Ashwin!
-    </h1>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="flex justify-between">
+        <Button>Use Me</Button>
+        <ModeToggle />
+      </div>
+    </ThemeProvider>
   );
 }
 
