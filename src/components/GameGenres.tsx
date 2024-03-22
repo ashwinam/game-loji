@@ -1,9 +1,9 @@
 import useGenres from "@/hooks/useGenres";
 
 function GameGenres() {
-  const { genres } = useGenres();
+  const { data } = useGenres();
 
-  return genres.map((genre) => <li>{genre.name}</li>);
+  return data.map((genre) => <li>{genre.name}</li>);
 }
 
 export default GameGenres;
