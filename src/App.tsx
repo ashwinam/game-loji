@@ -3,6 +3,7 @@ import dark_theme_logo from "./assets/removed_bg_logo.png";
 import { ModeToggle } from "./components/mode-toggle";
 import { useTheme } from "./components/theme-provider";
 import GameGrid from "./components/GameGrid";
+import GameGenres from "./components/GameGenres";
 
 function App() {
   return (
@@ -17,8 +18,10 @@ function App() {
         />
         <ModeToggle />
       </div>
-      <div className="aside hidden sm:block sm:col-span-2">aside</div>
-      <div className="main sm:col-span-10">
+      <div className="aside hidden sm:block sm:col-span-2">
+        <GameGenres />
+      </div>
+      <div className="main sm:col-span-10 px-3">
         <GameGrid />
       </div>
     </div>
