@@ -24,7 +24,7 @@ function PlatformIconsList({ game }: Props) {
         const IconComponent = IconsMap[platform.slug];
         return (
           <div>
-            <IconComponent size={"1.2em"} color="gray" />
+            <IconComponent size={"1.3em"} color="gray" />
           </div>
         );
       })}
