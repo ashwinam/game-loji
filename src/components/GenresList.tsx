@@ -1,11 +1,13 @@
 import useGenres from "@/hooks/useGenres";
 import getCroppedImageUrl from "@/services/imageUrl";
+import Spinner from "./ui/Spinner";
 
 function GenresList() {
-  const { data } = useGenres();
+  const { data, isLoading } = useGenres();
 
   return (
     <div className="list">
+      {isLoading && <Spinner />}
       {data.map((genre) => (
         <div className="flex gap-3 items-center my-3">
           <img
