@@ -5,9 +5,10 @@ import { Button } from "./ui/button";
 
 interface Props {
   onSelectedGenre: (genre: Genres | null) => void;
+  selectedGenre: Genres | null;
 }
 
-function GenresList({ onSelectedGenre }: Props) {
+function GenresList({ onSelectedGenre, selectedGenre }: Props) {
   const { data, isLoading } = useGenres();
 
   return (
@@ -23,7 +24,9 @@ function GenresList({ onSelectedGenre }: Props) {
           <Button
             onClick={() => onSelectedGenre(genre)}
             variant="link"
-            className="font-semibold text-lg px-0"
+            className={`${
+              genre.id === selectedGenre?.id ? "font-bold" : "font-normal"
+            } text-lg px-0`}
           >
             {genre.name}
           </Button>

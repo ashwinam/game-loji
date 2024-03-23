@@ -23,7 +23,10 @@ function App() {
         <ModeToggle />
       </div>
       <div className="aside hidden lg:block lg:col-span-2 px-5">
-        <GenresList onSelectedGenre={(genre) => setSelectedGenre(genre)} />
+        <GenresList
+          selectedGenre={selectedGenre}
+          onSelectedGenre={(genre) => setSelectedGenre(genre)}
+        />
       </div>
       <div className="main md:col-span-12 lg:col-span-10 px-5">
         <GameGrid onSelectedGenre={selectedGenre} />

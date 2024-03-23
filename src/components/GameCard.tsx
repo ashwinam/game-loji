@@ -15,11 +15,11 @@ function GameCard({ game }: Props) {
       <div className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0  cursor-pointer px-6">
         {game.name}
       </div>
-      <div className="flex items-center justify-between p-6 pt-1">
-        <div className="flex gap-3 mt-2">
+      <div className="flex items-start justify-between p-6 pt-1">
+        <div className="flex gap-3 flex-wrap mt-2">
           <PlatformIconsList game={game} />
         </div>
-        <div>
+        <div className="ml-2">
           <CriticScore score={game.metacritic} />
         </div>
       </div>
