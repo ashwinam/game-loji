@@ -1,8 +1,13 @@
-import useGenres from "@/hooks/useGenres";
+import useGenres, { Genres } from "@/hooks/useGenres";
 import getCroppedImageUrl from "@/services/imageUrl";
 import Spinner from "./ui/Spinner";
+import { Button } from "./ui/button";
 
-function GenresList() {
+interface Props {
+  onSelectedGenre: (genre: Genres | null) => void;
+}
+
+function GenresList({ onSelectedGenre }: Props) {
   const { data, isLoading } = useGenres();
 
   return (
@@ -15,7 +20,13 @@ function GenresList() {
             alt={genre.name}
             className="h-[50px] w-[50px] object-cover rounded-lg"
           />
-          <div className="font-semibold text-lg">{genre.name}</div>
+          <Button
+            onClick={() => onSelectedGenre(genre)}
+            variant="link"
+            className="font-semibold text-lg px-0"
+          >
+            {genre.name}
+          </Button>
         </div>
       ))}
     </div>

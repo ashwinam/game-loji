@@ -22,11 +22,7 @@ function PlatformIconsList({ game }: Props) {
     <>
       {game.parent_platforms.map(({ platform }) => {
         const IconComponent = IconsMap[platform.slug];
-        return (
-          <div>
-            <IconComponent key={platform.id} size={"1.3em"} color="gray" />
-          </div>
-        );
+        return <IconComponent key={platform.id} size={"1.3em"} color="gray" />;
       })}
     </>
   );
