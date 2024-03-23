@@ -9,7 +9,7 @@ function GenresList() {
     <div className="list">
       {isLoading && <Spinner />}
       {data.map((genre) => (
-        <div className="flex gap-3 items-center my-3">
+        <div className="flex gap-3 items-center my-3" key={genre.id}>
           <img
             src={getCroppedImageUrl(genre.image_background)}
             alt={genre.name}
