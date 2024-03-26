@@ -6,8 +6,9 @@ import GameGrid from "./components/GameGrid";
 import GenresList from "./components/GenresList";
 import { Genres } from "./hooks/useGenres";
 import { useState } from "react";
-import PlatformList from "./components/PlatformList";
+import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
+import SortSelector from "./components/SortSelector";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
@@ -34,10 +35,11 @@ function App() {
         />
       </div>
       <div className="main md:col-span-12 lg:col-span-10 px-5">
-        <div className="mb-3">
-          <PlatformList
+        <div className="mb-5 flex gap-5">
+          <PlatformSelector
             onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
           />
+          <SortSelector />
         </div>
         <GameGrid
           onSelectedGenre={selectedGenre}

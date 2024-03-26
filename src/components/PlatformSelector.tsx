@@ -12,7 +12,7 @@ interface Props {
   onSelectedPlatform: (platform: Platform | null) => void;
 }
 
-function PlatformList({ onSelectedPlatform }: Props) {
+function PlatformSelector({ onSelectedPlatform }: Props) {
   const { data, error } = usePlatforms();
 
   if (error) return null;
@@ -43,4 +43,4 @@ function PlatformList({ onSelectedPlatform }: Props) {
   );
 }
 
-export default PlatformList;
+export default PlatformSelector;
