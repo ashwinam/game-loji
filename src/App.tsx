@@ -7,9 +7,13 @@ import GenresList from "./components/GenresList";
 import { Genres } from "./hooks/useGenres";
 import { useState } from "react";
 import PlatformList from "./components/PlatformList";
+import { Platform } from "./hooks/useGames";
 
 function App() {
   const [selectedGenre, setSelectedGenre] = useState<Genres | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
 
   return (
     <div className="grid sm:grid-cols-12 gap-4">
@@ -31,9 +35,14 @@ function App() {
       </div>
       <div className="main md:col-span-12 lg:col-span-10 px-5">
         <div className="mb-3">
-          <PlatformList />
+          <PlatformList
+            onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
+          />
         </div>
-        <GameGrid onSelectedGenre={selectedGenre} />
+        <GameGrid
+          onSelectedGenre={selectedGenre}
+          onSelectedPlatform={selectedPlatform}
+        />
       </div>
     </div>
   );
