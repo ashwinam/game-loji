@@ -16,6 +16,8 @@ function App() {
     null
   );
 
+  const [sortSelected, setSortSelected] = useState("");
+
   return (
     <div className="grid sm:grid-cols-12 gap-4">
       <div className="nav sm:col-span-12 flex items-center justify-between pr-4">
@@ -39,11 +41,14 @@ function App() {
           <PlatformSelector
             onSelectedPlatform={(platform) => setSelectedPlatform(platform)}
           />
-          <SortSelector />
+          <SortSelector
+            onSortSelected={(sortOrder) => setSortSelected(sortOrder)}
+          />
         </div>
         <GameGrid
           onSelectedGenre={selectedGenre}
           onSelectedPlatform={selectedPlatform}
+          onSortSelected={sortSelected}
         />
       </div>
     </div>

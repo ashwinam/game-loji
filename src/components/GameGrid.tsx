@@ -8,12 +8,18 @@ const skeletons = [1, 2, 3, 4, 5, 6];
 interface Props {
   onSelectedGenre: Genres | null;
   onSelectedPlatform: Platform | null;
+  onSortSelected: string;
 }
 
-function GameGrid({ onSelectedGenre, onSelectedPlatform }: Props) {
+function GameGrid({
+  onSelectedGenre,
+  onSelectedPlatform,
+  onSortSelected,
+}: Props) {
   const { data, error, isLoading } = useGames(
     onSelectedGenre,
-    onSelectedPlatform
+    onSelectedPlatform,
+    onSortSelected
   );
 
   return (
