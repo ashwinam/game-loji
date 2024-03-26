@@ -18,7 +18,8 @@ function SortSelector({ onSortSelected }: Props) {
       }
     >
       <SelectTrigger className="w-auto font-bold text-xl p-3">
-        <SelectValue placeholder="Order By: Relevance" />
+        <p className="mr-2">Order By:</p>
+        <SelectValue placeholder="Relevance" />
       </SelectTrigger>
       <SelectContent className="font-normal">
         <SelectItem className="text-lg" value="relevance">
