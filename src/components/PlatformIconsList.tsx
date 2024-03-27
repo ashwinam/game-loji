@@ -4,6 +4,7 @@ import { FaWindows, FaPlaystation, FaXbox, FaLinux } from "react-icons/fa";
 import { BsNintendoSwitch, BsGlobe } from "react-icons/bs";
 import { RiMacbookLine } from "react-icons/ri";
 import { MdAndroid, MdPhoneIphone } from "react-icons/md";
+import { SiSega, SiCommodore, SiAtari } from "react-icons/si";
 
 function PlatformIconsList({ game }: Props) {
   const IconsMap: { [key: string]: IconType } = {
@@ -16,6 +17,9 @@ function PlatformIconsList({ game }: Props) {
     android: MdAndroid,
     ios: MdPhoneIphone,
     web: BsGlobe,
+    sega: SiSega,
+    "commodore-amiga": SiCommodore,
+    atari: SiAtari,
   };
 
   return (

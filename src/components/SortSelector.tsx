@@ -34,10 +34,10 @@ function SortSelector({ onSortSelected }: Props) {
         <SelectItem className="text-lg" value="-released">
           Release Date
         </SelectItem>
-        <SelectItem className="text-lg" value="metacritic">
+        <SelectItem className="text-lg" value="-metacritic">
           Popularity
         </SelectItem>
-        <SelectItem className="text-lg" value="rating">
+        <SelectItem className="text-lg" value="-rating">
           Average Rating
         </SelectItem>
       </SelectContent>
