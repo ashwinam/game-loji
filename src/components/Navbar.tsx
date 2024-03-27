@@ -31,7 +31,7 @@ function Navbar({ onSearchText }: Props) {
         <div className="relative basis-full mr-2 flex items-center">
           <Input
             ref={ref}
-            className="rounded-[25px] font-bold px-12 text-xl h-11 placeholder:font-bold placeholder:text-xl shadow-sm outline-fuchsia-500"
+            className="rounded-[25px] font-bold px-12 text-xl h-11 placeholder:font-bold placeholder:text-xl shadow-sm bg-zinc-300/10 focus:border-blue-700 focus:border-2"
             placeholder="Search Games ..."
           />
           <BsSearch className="absolute left-4 font-bold" size="1.3em" />
