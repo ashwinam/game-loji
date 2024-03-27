@@ -13,6 +13,9 @@ function GenresList({ onSelectedGenre, selectedGenre }: Props) {
 
   return (
     <div className="list">
+      <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+        Genres
+      </h2>
       {isLoading && <Spinner />}
       {data.map((genre) => (
         <div className="flex gap-3 items-center my-3" key={genre.id}>
@@ -26,7 +29,7 @@ function GenresList({ onSelectedGenre, selectedGenre }: Props) {
             variant="link"
             className={`${
               genre.id === selectedGenre?.id ? "font-bold" : "font-normal"
-            } text-lg px-0`}
+            } text-lg px-0 whitespace-normal text-left`}
           >
             {genre.name}
           </Button>
