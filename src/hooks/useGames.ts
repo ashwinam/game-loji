@@ -16,8 +16,8 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = (onSelectedGenre: Genres | null, onSelectedPlatform: Platform|null, onSortSelected: string) => {
-  return useData<Game>("/games", {params : {genres : onSelectedGenre?.id, platforms : onSelectedPlatform?.id, ordering: onSortSelected}}, [onSelectedGenre?.id, onSelectedPlatform?.id, onSortSelected])
+const useGames = (onSelectedGenre: Genres | null, onSelectedPlatform: Platform|null, onSortSelected: string, onSearchField:string) => {
+  return useData<Game>("/games", {params : {genres : onSelectedGenre?.id, platforms : onSelectedPlatform?.id, ordering: onSortSelected, search: onSearchField}}, [onSelectedGenre?.id, onSelectedPlatform?.id, onSortSelected, onSearchField])
 }
 
 export default useGames;

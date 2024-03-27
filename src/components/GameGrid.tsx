@@ -9,17 +9,20 @@ interface Props {
   onSelectedGenre: Genres | null;
   onSelectedPlatform: Platform | null;
   onSortSelected: string;
+  onSearchField: string;
 }
 
 function GameGrid({
   onSelectedGenre,
   onSelectedPlatform,
   onSortSelected,
+  onSearchField,
 }: Props) {
   const { data, error, isLoading } = useGames(
     onSelectedGenre,
     onSelectedPlatform,
-    onSortSelected
+    onSortSelected,
+    onSearchField
   );
 
   return (

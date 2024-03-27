@@ -12,13 +12,14 @@ function App() {
   const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
     null
   );
+  const [searchValue, setSearchValue] = useState("");
 
   const [sortSelected, setSortSelected] = useState("");
 
   return (
     <div className="grid sm:grid-cols-12 gap-4">
       <div className="nav sm:col-span-12 flex items-center pr-4">
-        <Navbar />
+        <Navbar onSearchText={(searchText) => setSearchValue(searchText)} />
       </div>
 
       <div className="aside hidden lg:block lg:col-span-2 px-5">
@@ -40,6 +41,7 @@ function App() {
           onSelectedGenre={selectedGenre}
           onSelectedPlatform={selectedPlatform}
           onSortSelected={sortSelected}
+          onSearchField={searchValue}
         />
       </div>
     </div>
